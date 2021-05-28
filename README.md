@@ -1,4 +1,6 @@
-### Plugins: 
+Plugins and themes for BetterDiscord.
+
+## Plugins: 
 * **ContextMenuVoiceChannel** <small>([source](src/Plugins/ContextMenuVoiceChannel))</small>  
   _Requires using context menu to join voice channels._
 
