@@ -17,7 +17,9 @@ module.exports = (() => {
 				}
 			],
 			version: '0.0.1',
-			description: 'Adds USRBG backgrounds as banner images.'
+			description: 'Adds USRBG backgrounds as banner images.',
+            github: 'https://github.com/f4iTh/betterdiscord-addons',
+            github_raw: 'https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/USRBGBanners/USRBGBanners.plugin.js'
 		},
 		changelog: [
 			{

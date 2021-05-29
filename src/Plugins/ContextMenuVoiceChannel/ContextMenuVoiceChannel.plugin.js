@@ -17,7 +17,9 @@ module.exports = (() => {
 				}
 			],
 			version: '0.0.2',
-			description: 'Requires using context menu to join voice channels.'
+			description: 'Requires using context menu to join voice channels.',
+            github: 'https://github.com/f4iTh/betterdiscord-addons',
+            github_raw: 'https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/ContextMenuVoiceChannel/ContextMenuVoiceChannel.plugin.js'
 		},
 		changelog: [
 			{
