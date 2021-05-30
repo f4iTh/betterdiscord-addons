@@ -3,6 +3,9 @@
  * @authorId 249957877999992833
  * @version 0.0.1
  * @description Allows setting images for albums that don't have an image (local audio files through Spotify).
+ * @website https://github.com/f4iTh/betterdiscord-addons
+ * @source https://github.com/f4iTh/betterdiscord-addons/tree/master/src/Plugins/CustomAlbumAssets
+ * @updateUrl https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/CustomAlbumAssets/CustomAlbumAssets.plugin.js
  */
 
 module.exports = (() => {
@@ -18,7 +21,8 @@ module.exports = (() => {
 			],
 			version: '0.0.1',
 			description: "Allows setting images for albums that don't have an image (local audio files through Spotify).",
-			github: 'https://github.com/f4iTh/betterdiscord-addons'
+			github: 'https://github.com/f4iTh/betterdiscord-addons',
+            github_raw: 'https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/CustomAlbumAssets/CustomAlbumAssets.plugin.js'
 		}
 	};
 	var storedData = {};

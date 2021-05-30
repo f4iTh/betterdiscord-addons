@@ -3,6 +3,9 @@
  * @authorId 249957877999992833
  * @version 0.0.2
  * @description Adds USRBG backgrounds as banner images.
+ * @website https://github.com/f4iTh/betterdiscord-addons
+ * @source https://github.com/f4iTh/betterdiscord-addons/tree/master/src/Plugins/USRBGBanners
+ * @updateUrl https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/USRBGBanners/USRBGBanners.plugin.js
  */
 
 module.exports = (() => {
