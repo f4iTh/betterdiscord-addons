@@ -1,7 +1,7 @@
 /**
  * @name USRBGBanners
  * @authorId 249957877999992833
- * @version 0.0.1
+ * @version 0.0.2
  * @description Adds USRBG backgrounds as banner images.
  */
 
@@ -16,7 +16,7 @@ module.exports = (() => {
 					github_username: 'f4iTh'
 				}
 			],
-			version: '0.0.1',
+			version: '0.0.2',
 			description: 'Adds USRBG backgrounds as banner images.',
             github: 'https://github.com/f4iTh/betterdiscord-addons',
             github_raw: 'https://raw.githubusercontent.com/f4iTh/betterdiscord-addons/master/src/Plugins/USRBGBanners/USRBGBanners.plugin.js'
@@ -26,7 +26,12 @@ module.exports = (() => {
 				title: 'Release',
 				type: 'added',
 				items: ['Initial release.']
-			}
+			},
+            {
+                title: 'Improved',
+                type: 'improved',
+                items: ['Removed explicit uses of classnames.']
+            }
 		]
 	};
 
@@ -54,6 +59,8 @@ module.exports = (() => {
 		: (([Plugin, Api]) => {
 				const plugin = (Plugin, Api) => {
 					const { Patcher, WebpackModules } = Api;
+                    const useravatars = WebpackModules.getByProps('avatarPositionNormal', 'avatarPositionPremium');
+                    const userbanners = WebpackModules.getByProps('profileBanner', 'profileBannerPremium');
 					let CustomBannerList = [];
 					return class USRBGBanners extends Plugin {
 						constructor() {
@@ -91,7 +98,6 @@ module.exports = (() => {
 							this.patchUserPopoutHeader(promiseState);
 							this.patchUserBanner(promiseState);
 						}
-						// TODO: replace explicit classnames with classnames from modules once available
 						patchUserPopoutHeader(promiseState) {
 							const UserPopoutHeader = WebpackModules.getModule((m) => m.default && m.default.displayName == 'UserPopoutHeader');
 
@@ -99,7 +105,7 @@ module.exports = (() => {
 							Patcher.after(UserPopoutHeader, 'default', (_, [props], returnValue) => {
 								if (!returnValue?.props?.children[2]?.props?.className || !(props?.user?.id in CustomBannerList)) return returnValue;
 
-								returnValue.props.children[2].props.className = 'avatarWrapperNormal-2tu8Ts avatarWrapper-1-5NA0 avatarPositionPremium-1QenYe';
+								returnValue.props.children[2].props.className = `${useravatars.avatarWrapperNormal} ${useravatars.avatarPositionPremium}`;
 							});
 						}
 						async patchUserBanner(promiseState) {
@@ -109,7 +115,7 @@ module.exports = (() => {
 							Patcher.after(UserBanner, 'default', (_, [props], returnValue) => {
 								if (!returnValue?.props?.className || !(props?.user?.id in CustomBannerList)) return returnValue;
 
-								returnValue.props.className = 'profileBannerPremium-35utuo banner-2QYc2d';
+								returnValue.props.className = `${userbanners.profileBannerPremium} ${userbanners.banner}`;
 								returnValue.props.style = {
 									backgroundImage: `url(${CustomBannerList[props.user.id]})`
 								};
