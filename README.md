@@ -6,6 +6,3 @@ Plugins and themes for BetterDiscord.
 
 * **CustomAlbumAssets** <small>([source](src/Plugins/CustomAlbumAssets))</small>  
   _Allows setting images for albums that don't have an image (local audio files through Spotify)._
-
-* **USRBGBanners** <small>([source](src/Plugins/USRBGBanners))</small>  
-  _Adds [USRBG](https://github.com/Discord-Custom-Covers/usrbg) backgrounds as banner images._
